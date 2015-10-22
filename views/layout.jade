@@ -1,0 +1,35 @@
+doctype html
+html(ng-app='PartFinder')
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='/bower_components/jquery/dist/jquery.min.js')
+    script(src='/bower_components/bootstrap/dist/js/bootstrap.min.js')
+    script(src='/bower_components/angular/angular.min.js')
+    script(src='/bower_components/angular-route/angular-route.min.js')
+    script(src='/bower_components/angular-resource/angular-resource.min.js')
+    script(src='javascripts/part_finder.js')
+    script(src='javascripts/services.js')
+    script(src='javascripts/part.js')
+    script(src='javascripts/pick_list.js')
+    script(src='javascripts/store.js')
+    script(src='javascripts/config.js')
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap-theme.min.css')
+  body
+    block navBar
+      nav(class='navbar navbar-default', role='navigation')
+          .container-fluid
+              .navbar-header
+                  button(class='navbar-toggle', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+                      span.sronly
+                      span.icon-bar
+                      span.icon-bar
+                      span.icon-bar
+                  a(class='navbar-brand', href='/#/parts.html') Parts
+                  a(class='navbar-brand', href='/#/stores.html') Stores
+                  a(class='navbar-brand', href='/#/pick_lists.html') Pick Lists
+                  a(class='navbar-brand', href='/#/configs.html') Configs                 
+    block pageTitle
+    block pageContent
+    script(src='javascripts/part_finder_ux.js')

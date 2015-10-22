@@ -1,0 +1,15 @@
+form(ng-submit="submit()", ng-controller="PlayPickListController")
+  h2
+    | Step {{step+1}}/{{no_step}}
+  img(src="images/7/{{current_part.image}}")
+  ul
+    li
+      p {{current_part.category}} - {{current_part.description}}
+    li
+      p Quantity {{pick_list.parts[step].quantity}}
+    li
+      p Colour {{pick_list.parts[step].colour}}
+   a(href="#/pick_lists_play.html/{{pick_list._id}}", ng-click="prev()")  Previous        
+   a(href="#/pick_lists_play.html/{{pick_list._id}}", ng-click="next()")  Next
+
+ 

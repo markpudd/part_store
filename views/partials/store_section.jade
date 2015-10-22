@@ -1,0 +1,23 @@
+h1
+  | Store Section
+div(ng-controller="StoreSectionController") 
+  div
+    div.right_section
+      label(for="store") Store
+      select(ng-options="option.name for option in store_list track by option._id",ng-model="storeSelected",ng-change="storeChanged()").form-control
+  div
+    div.right_section
+      div.store-row(ng-repeat="cols in store_config.rows")
+        div(ng-repeat="cc in cols  track by $index",ng-class="cc.css")
+          div.store(id="{{cc.sid}}" drag-destination ng_click="selectPlace(cc.sid)" ng-class="selected_place == cc.sid  ? 'selected': ''")
+            h3.store_line(ng-repeat="part_name in store.stored[cc.sid] | limitTo:3") {{part_name}}
+    div.left_section
+      ul.parts
+        li.parts(ng-repeat="part in section_parts track by $index")
+          div.part
+            div.part_top
+              img.part_left(src="images/7/{{part.image}}" alt="Image" height="42" width="42")
+              h1.part_h1(title="{{part.description}}") {{part.description}}
+              h2.part_h2 {{part._id}}
+            h3.part_info_line Quantity {{part.quantity}}
+            a(ng-click="remove(part._id)") Remove

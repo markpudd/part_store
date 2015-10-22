@@ -1,0 +1,7 @@
+h1
+  | Configs
+div(ng-controller="ConfigsController")
+  ul
+    li(ng-repeat="config in configs")
+        a(href="#/configs.html/{{config._id}}") {{config.name}}
+  a(href="#/configs.html/new") New

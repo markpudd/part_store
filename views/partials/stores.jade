@@ -1,0 +1,17 @@
+h1
+  | Stores
+div(ng-controller="StoresController")
+  a(href="#/new_store.html/new") New
+  table.table
+    tr
+      th Name
+      th Type
+      th 
+      th 
+    tr(ng-repeat="store in stores")
+      td {{store.name}}
+      td {{store.type}}
+      td 
+        a(href="#/store_section.html/{{store._id}}/0") Show
+      td 
+        a(href="#/store_load.html/{{store._id}}") Load

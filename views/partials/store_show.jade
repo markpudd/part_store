@@ -1,0 +1,9 @@
+h1
+  | Stores
+div(ng-controller="StoreLoadController")
+  div.right_section
+    div.store-row(ng-repeat="cols in store_config.rows")
+      div(ng-repeat="cc in cols track by $index",ng-class="cc")
+        div.store
+          h3.store_line Row x
+          h3.store_line Row y

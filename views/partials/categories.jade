@@ -1,0 +1,6 @@
+h1
+  | Categories
+div(ng-controller="CategoriesController")
+  ul
+    li(ng-repeat="category in categories")
+        a(href="#/parts.html/cat/{{category}}") {{category}}

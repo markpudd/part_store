@@ -1,0 +1,18 @@
+div( ng-init="init()")
+  h1
+    | Pick Lists for {{pick_list.name}}
+  table.table
+    tr
+      th Part Id
+      th Name
+      th Quantity
+      th Colour
+      th
+    tr(ng-repeat="part in pick_list.parts")
+      td {{part.part_id}}
+      td {{part.name}}
+      td {{part.quantity}}
+      td {{part.colour}}
+      td 
+         a(href="#/parts.html/{{part.part_id}}") Show
+  a(href="#/edit_pick_list.html/{{pick_list._id}}") Edit

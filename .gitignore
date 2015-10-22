@@ -1,0 +1,27 @@
+*.sw*
+*~
+
+# Logs and databases #
+######################
+*.log
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+node_modules/
+.sass-cache/
+public/min/
+public/images/7/
+public/index.html
+vendor/*
+public/fonts
+bower_components
+bin

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en" ng-app="partfinderFinder">
+<head>
+  <meta charset="utf-8">
+  <title>My HTML File</title>
+  <link rel="stylesheet" href="bs/css/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+  <script src="javascripts/partfinder_finder.js"></script>
+</head>
+<body>
+	<div ng-controller="CategoryController as frontPage">
+		<div ng-repeat="category in frontPage.categories">
+	  	  <h1><a href="#/categories/{{category.id}}" class="thumb">{{category}} gg</a></h1>
+
+	   </div>
+	<div>
+</body>
+</html>

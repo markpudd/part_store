@@ -1,0 +1,35 @@
+form(ng-submit="submit()", ng-controller="ConfigController", ng-init="init()")
+  h1
+    | Config
+  p
+    | Name  
+    input(type="text",ng-model="config.name",required)  
+  table.table
+    tr
+      th Name
+      th Key
+      th Type 
+      th Data Type
+      th Allowed Values
+      th
+    tr(ng-repeat="field in config.fields")
+      td 
+        input(type="text",ng-model="field.name",required)
+      td 
+        input(type="text",ng-model="field.key",required)
+      td 
+        select(ng-model="field.type")
+          option select
+          option checkbox
+      td 
+        select(ng-model="field.dataType")
+          option uint_8
+          option boolean  
+      td 
+        input(type="text",ng-model="field.values",required)
+      td
+          button(type="button",ng-click="remove($index)")
+           span(class="glyphicon glyphicon-remove",aria-hidden="true") 
+  input(type="submit", id="submit", value="Save")
+  button(type="button",ng-click="add()")
+    | Add Row

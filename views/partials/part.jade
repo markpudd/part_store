@@ -1,0 +1,7 @@
+div( ng-controller="PartController", ng-init="init()")
+  div.row
+    div.col-md-2
+      img(src="images/7/{{part.image}}")
+    div.col-md-10
+      h2 {{part.category}} - {{part.description}}
+  a(href="#/edit_part.html/{{part._id}}") Edit

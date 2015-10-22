@@ -1,0 +1,22 @@
+h1
+  | Parts
+
+div(ng-controller="PartsController")
+  div.row
+    div.col-md-6
+      label(for="category") Category
+      select(ng-options="category for category in categories",ng-model="categorySelected",ng-change="categoryChanged()").form-control
+    div.col-md-6   
+      a(href="#/new_part.html/new") New
+  ul.parts
+    li.parts(ng-repeat="part in parts")
+      div.part
+        div.part_top
+          img.part_left(src="images/7/{{part.image}}" alt="Image" height="42" width="42")
+          h1.part_h1(title="{{part.description}}") {{part.description}}
+          h2.part_h2 {{part._id}}
+        h3.part_info_line Quantity {{part.quantity}}
+        a(href="#/parts.html/{{part._id}}") Open
+      
+      
+        

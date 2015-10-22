@@ -1,0 +1,31 @@
+form(ng-submit="submit()", ng-controller="PickListController", ng-init="init()")
+  h1
+    | New Pick List
+  p
+    | Name   
+    input(type="text",ng-model="pick_list.name",required)  
+  p
+    | Description   
+    input(type="text",ng-model="pick_list.description",required)  
+  table.table
+    tr
+      th Category
+      th Name
+      th Quantity
+      th Colour
+      th
+    tr(ng-repeat="part in pick_list.parts")
+      td 
+        select(ng-options="value for value in categories",ng-model="part.category", ng-change="catChange(part.category)").form-control
+      td 
+        select(ng-options="value._id as value.description for value in parts_hash[part.category]",ng-model="part.part_id").form-control
+      td 
+        input(type="text",ng-model="part.quantity",required)
+      td
+        input(type="text",ng-model="part.colour",required)
+      td
+        button(type="button",ng-click="remove($index)")
+         span(class="glyphicon glyphicon-remove",aria-hidden="true")
+  input(type="submit", id="submit", value="Save")
+  button(type="button",ng-click="add()")
+    | Add Row

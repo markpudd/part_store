@@ -1,0 +1,18 @@
+h1
+  | Pick Lists
+a(href="#/new_pick_list.html/new") New
+table.table
+  tr
+    th Name
+    th Description
+    th Number of Unique Parts
+    th 
+    th 
+  tr(ng-repeat="pick_list in pick_lists")
+    td {{pick_list.name}}
+    td {{pick_list.description}}
+    td {{pick_list.parts.length}}
+    td 
+      a(href="#/pick_lists_show.html/{{pick_list._id}}") Show
+    td 
+      a(href="#/pick_lists_play.html/{{pick_list._id}}") Play
